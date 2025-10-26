@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Basics Quiz</title>
+</head>
+
+<body>
+	<script>
+		let again = "yes"
+
+		while (again.toLowerCase() == "yes") {
+
+			let score = 0
+			const wrong = []
+
+			alert("Welcome to my JavaScript quiz!")
+
+			const questions = [
+				{ q: "1. What keyword is used to declare a variable in JavaScript?", a: "let" },
+				{ q: "2. What symbol is used to end a statement?", a: ";" },
+				{ q: "3. true or false: JavaScript is the same as Java.", a: "false" },
+				{ q: "4. What is used to show a message to the user?", a: "alert" },
+				{ q: "5. What data type is 'hello'?", a: "string" }
+			]
+
+			for (let i = 0; i < questions.length; i++) {
+				let answer = prompt(questions[i].q)
+
+				if (answer && answer.toLowerCase() == questions[i].a.toLowerCase()) {
+					alert("Correct!")
+					score = score + 1
+				} else {
+					alert("Wrong! The right answer is " + questions[i].a)
+					wrong.push(questions[i].q)
+				}
+			}
+
+			alert("You got " + score + " out of " + questions.length)
+
+			if (wrong.length > 0) {
+				console.log("You missed these ones:")
+				for (let i = 0; i < wrong.length; i++) {
+					console.log(wrong[i])
+				}
+			}
+
+			again = prompt("Do you want to play again? (yes or no)")
+		}
+
+		alert("Thanks for playing my JavaScript Quiz!")
+		console.log("Quiz ended.")
+	</script>
+</body>
+
+</html>
